@@ -1,0 +1,24 @@
+
+.postContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container{
+    background-color: #1D1D1F;
+    color: #F5F5F7;
+    margin-top: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.singlePost{
+    margin-left: 70px;
+}
