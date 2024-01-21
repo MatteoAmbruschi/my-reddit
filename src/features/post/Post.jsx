@@ -1,11 +1,14 @@
 import SideBar from "../sideBar/SideBar"
 import styles from './post.module.css'
 
-function Post(){
+function Post({postSingle}){
+
     return (
-        <div style={{display: 'flex'}}>
+        <div className={styles.singlePostContainer}>
             <SideBar />
-            <div className={`${styles.container} ${styles.singlePost}`}>CIAOO</div>
+            <div className={styles.postContainer}>
+                <div style={{minHeight: '300px'}} className={`${styles.container}`}>{console.log(postSingle.title)}</div>
+            </div>
         </div>
     )
 }

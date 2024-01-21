@@ -6,7 +6,7 @@ function SideBar(){
 
 
     return (
-            <div style={{display: 'flex', flexDirection: 'column'}}>
+            <div className={styles.containerSideBar}>
                 {items.map((item) => (
                     <div className={styles.square}>{item}</div>
                 ))}

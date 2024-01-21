@@ -19,6 +19,7 @@
     text-align: center;
 }
 
-.singlePost{
-    margin-left: 70px;
+
+.singlePostContainer{
+    display: flex;
 }

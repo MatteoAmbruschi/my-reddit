@@ -1,10 +1,18 @@
+.containerSideBar{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin-left: 50px;
+}
+
 .square{
     background-color: #1D1D1F;
     color: #F5F5F7;
     padding: 10px 5px;
     height: 40px;
     width: 140px;
-    margin: 20px 0 0 50px;
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
