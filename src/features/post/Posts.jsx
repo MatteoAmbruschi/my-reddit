@@ -1,25 +1,34 @@
 import styles from './post.module.css'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
-function Posts({allPosts, postSingle}){
-    const [clickPost, setClickPost] = useState([])    
+import { postSingle } from './postsSlice';
+import { useNavigate } from 'react-router-dom';
 
-    function handleClickPost(index){
-        setClickPost(index);
-        postSingle(index)
+function Posts() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const allPosts = useSelector((state) => state.posts.allPosts)
+  
+    function handleClickPost(postId) {
+      dispatch(postSingle(postId));
+      navigate('/post');
     }
-
-     return (
-        <div className={styles.postContainer}>
-            {allPosts.map((post, index) => (
-                <Link className={styles.container} style={{textDecoration: 'none'}} to='/post' index={allPosts.id} onClick={() => handleClickPost(post.id)} key={post.id}>
-                    <div><h1>{post.title}</h1></div>
-                    <div><p>{post.text}</p></div>
-                </Link>
-            ))}
-        </div>
-    )
-}
+  
+    return (
+      <div className={styles.postContainer}>
+        {allPosts.map((post) => (
+          <div
+            className={styles.container}
+            style={{ textDecoration: 'none' }}
+            onClick={() => handleClickPost(post.id)}
+            key={post.id}
+          >
+            <div><h1>{post.title}</h1></div>
+            <div><p>{post.text}</p></div>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
 export default Posts

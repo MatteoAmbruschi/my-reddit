@@ -1,14 +1,14 @@
 import SideBar from './sideBar/SideBar'
 import Posts from './post/Posts'
 
-const HomePage = ({allPosts, postSingle}) => {
+const HomePage = () => {
 
-    return (
-            <div style={{display: 'flex'}}>
-                <SideBar />
-                <Posts allPosts={allPosts} postSingle={postSingle} />
-            </div>
-    )
-}
+  return (
+    <div style={{ display: 'flex' }}>
+      <SideBar />
+      <Posts />
+    </div>
+  );
+};
 
 export default HomePage
