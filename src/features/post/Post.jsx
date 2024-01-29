@@ -1,7 +1,7 @@
 import SideBar from "../sideBar/SideBar";
 import styles from './post.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { resetPostSingle } from "./postsSlice";
+/* import { resetPostSingle } from "./postsSlice"; */
 import { useNavigate } from 'react-router-dom'
 
 function Post() {
@@ -11,7 +11,7 @@ function Post() {
 
   const handleBack = () => {
     navigate(-1)
-    dispatch(resetPostSingle())
+/*     dispatch(resetPostSingle()) */
   }
 
   return (
@@ -19,9 +19,10 @@ function Post() {
       <SideBar />
 
       <div className={styles.postContainer}>
-        <button onClick={() => handleBack()}>Turn Back ↩</button>
+        
+        <button onClick={() => handleBack()} className={styles.backButton}>Turn Back ↩</button>
 
-        <div style={{ minHeight: '300px', scale: 'none', cursor: 'auto' }} className={`${styles.container}`}>
+        <div style={{ minHeight: '300px', transform: 'none', cursor: 'auto' }} className={`${styles.container}`}>
           {selectedPostId ? (
             <>
               <h1>{selectedPostId.title}</h1>

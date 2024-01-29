@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const slideBarSlice = createSlice({
     name: 'slideBar',
     initialState: {
-        items: [{title: 'Calcio', id: 0}, {title: 'Macchine', id: 1}, {title: 'Londra', id: 2} , {title: 'Atalanta', id: 3}, {title: 'Fumetti', id: 4}],
+        items: [{title: 'Calcio', id: 0}, {title: 'Macchine', id: 1}, {title: 'Londra', id: 2} , {title: 'Atalanta', id: 3}, {title: 'Fumetti', id: 4}, {title: 'Telefoni', id: 5}],
         itemClicked: null
     },
     reducers: {
