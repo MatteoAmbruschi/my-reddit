@@ -18,6 +18,7 @@ const Menu = () => {
         dispatch(resetPostSingle())
         dispatch(cleaner())
         navigate('/')
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     return (

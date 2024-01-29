@@ -3,16 +3,22 @@ import styles from './post.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 /* import { resetPostSingle } from "./postsSlice"; */
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react';
+
 
 function Post() {
   const selectedPostId = useSelector(state => state.posts.selectedPost);
-  const dispatch = useDispatch()
+/*   const dispatch = useDispatch() */
   const navigate = useNavigate()
 
   const handleBack = () => {
     navigate(-1)
 /*     dispatch(resetPostSingle()) */
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedPostId]);
 
   return (
     <div className={styles.singlePostContainer}>
@@ -22,7 +28,7 @@ function Post() {
         
         <button onClick={() => handleBack()} className={styles.backButton}>Turn Back ↩</button>
 
-        <div style={{ minHeight: '300px', transform: 'none', cursor: 'auto' }} className={`${styles.container}`}>
+        <div className={`${styles.container} ${styles.singlePost}`}>
           {selectedPostId ? (
             <>
               <h1>{selectedPostId.title}</h1>

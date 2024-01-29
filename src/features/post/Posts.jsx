@@ -17,14 +17,21 @@ function Posts() {
     return (
       <div className={styles.postContainer}>
         {allPosts.map((post) => (
-          <div
-            className={styles.container}
-            style={{ textDecoration: 'none' }}
-            onClick={() => handleClickPost(post.id)}
-            key={post.id}
-          >
-            <div><h1>{post.title}</h1></div>
-            <div><p>{post.text}</p></div>
+          <div className={styles.scale}>
+            <div
+              className={styles.container}
+              style={{ textDecoration: "none" }}
+              onClick={() => handleClickPost(post.id)}
+              key={post.id}
+            >
+              <div>
+                <h1>{post.title}</h1>
+              </div>
+              <div>
+                <p>{post.text}</p>
+              </div>
+            </div>
+            <div className={styles.infoPosts}>8 hours ago</div>
           </div>
         ))}
       </div>

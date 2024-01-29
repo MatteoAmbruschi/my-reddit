@@ -1,23 +1,16 @@
 import SideBar from './sideBar/SideBar'
 import Posts from './post/Posts'
-import Lenis from '@studio-freight/lenis'
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 const HomePage = () => {
-  
-  const lenis = new Lenis();
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
 
   return (
-    <div style={{ display: 'flex' }}>
-      <SideBar />
-      <Posts />
-    </div>
+    <ReactLenis root>
+      <div style={{ display: 'flex' }}>
+        <SideBar />
+        <Posts />
+      </div>
+    </ReactLenis>
   );
 };
 export default HomePage

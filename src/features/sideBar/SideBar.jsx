@@ -1,6 +1,7 @@
 import styles from './sideBar.module.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { filterClicked } from './slideBarSlice'
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 function SideBar(){
     const dispatch = useDispatch()
@@ -44,6 +45,7 @@ function SideBar(){
     const randomPicker = Math.floor(Math.random() * 7)
 
     return (
+        <ReactLenis root> 
         <div className={styles.pageContainer}>
             <div className={styles.containerSideBar}>
                 {items.map((item, index) => (
@@ -51,6 +53,7 @@ function SideBar(){
                 ))}
             </div>
         </div>
+        </ReactLenis>
     )
 }
 
