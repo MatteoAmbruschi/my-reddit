@@ -31,7 +31,7 @@ function Posts() {
                 <p>{post.text}</p>
               </div>
             </div>
-            <div className={styles.infoPosts}>8 hours ago</div>
+            <div className={styles.infoPosts} onClick={() => handleClickPost(post.id)}>8 hours ago</div>
           </div>
         ))}
       </div>
