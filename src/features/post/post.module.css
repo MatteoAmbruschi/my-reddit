@@ -2,22 +2,31 @@
 .postContainer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
 .container{
-    background-color: #1D1D1F;
-    color: #F5F5F7;
+    background-color: #FFEB3B;
+    color: #5C4A0B;
     margin-top: 30px;
-    width: 80%;
+    width: 97%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+
+    box-sizing: border-box;
+    padding: 1% 4% 4% 4%;
+
+    text-align: left;
     cursor: pointer;
+    box-shadow: 0px 0px 13px -3px rgba(56, 190, 224, 0.3);
+    border-radius: 17px;
+}
+
+.container h1{
+    font-size: 153px;
+    text-transform: capitalize;
+    margin: 0;
 }
 
 

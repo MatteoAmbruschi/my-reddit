@@ -1,14 +1,144 @@
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-Bold.eot');
+  src: local('../public/Mabry/Mabry Pro Bold'), local('../public/Mabry/MabryPro-Bold'),
+      url('../public/Mabry/MabryPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-Bold.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-Bold.woff') format('woff'),
+      url('../public/Mabry/MabryPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-Medium.eot');
+  src: local('../public/Mabry/Mabry Pro Medium'), local('../public/Mabry/MabryPro-Medium'),
+      url('../public/Mabry/MabryPro-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-Medium.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-Medium.woff') format('woff'),
+      url('../public/Mabry/MabryPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-Black.eot');
+  src: local('../public/Mabry/Mabry Pro Black'), local('../public/Mabry/MabryPro-Black'),
+      url('../public/Mabry/MabryPro-Black.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-Black.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-Black.woff') format('woff'),
+      url('../public/Mabry/MabryPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-LightItalic.eot');
+  src: local('../public/Mabry/Mabry Pro Light Italic'), local('../public/Mabry/MabryPro-LightItalic'),
+      url('../public/Mabry/MabryPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-LightItalic.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-LightItalic.woff') format('woff'),
+      url('../public/Mabry/MabryPro-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-BoldItalic.eot');
+  src: local('Mabry Pro Bold Italic'), local('MabryPro-BoldItalic'),
+      url('../public/Mabry/MabryPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-BoldItalic.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-BoldItalic.woff') format('woff'),
+      url('../public/Mabry/MabryPro-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-Light.eot');
+  src: local('Mabry Pro Light'), local('MabryPro-Light'),
+      url('../public/Mabry/MabryPro-Light.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-Light.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-Light.woff') format('woff'),
+      url('../public/Mabry/MabryPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-BlackItalic.eot');
+  src: local('Mabry Pro Black Italic'), local('MabryPro-BlackItalic'),
+      url('../public/Mabry/MabryPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-BlackItalic.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-BlackItalic.woff') format('woff'),
+      url('../public/Mabry/MabryPro-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-MediumItalic.eot');
+  src: local('Mabry Pro Medium Italic'), local('MabryPro-MediumItalic'),
+      url('../public/Mabry/MabryPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-MediumItalic.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-MediumItalic.woff') format('woff'),
+      url('../public/Mabry/MabryPro-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-Italic.eot');
+  src: local('Mabry Pro Italic'), local('MabryPro-Italic'),
+      url('../public/Mabry/MabryPro-Italic.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-Italic.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-Italic.woff') format('woff'),
+      url('../public/Mabry/MabryPro-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('../public/Mabry/MabryPro-Regular.eot');
+  src: local('Mabry Pro'), local('MabryPro-Regular'),
+      url('../public/Mabry/MabryPro-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../public/Mabry/MabryPro-Regular.woff2') format('woff2'),
+      url('../public/Mabry/MabryPro-Regular.woff') format('woff'),
+      url('../public/Mabry/MabryPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:'Mabry Pro';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #F5F5F7;
+  background: #FAFAF7;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Mabry Pro'
 }

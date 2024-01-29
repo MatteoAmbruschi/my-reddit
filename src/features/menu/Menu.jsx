@@ -11,7 +11,7 @@ const Menu = () => {
     const navigate = useNavigate()
     const itemClick = useSelector((state) => state.slideBar.itemClicked)
 
-    const placeholder = `Search Post in ${itemClick ? itemClick.title : 'Home'}`
+    const placeholder = `Search Posts in ${itemClick ? itemClick.title : 'Home'}`
 
     const handleToHome = (e) => {
         e.preventDefault()

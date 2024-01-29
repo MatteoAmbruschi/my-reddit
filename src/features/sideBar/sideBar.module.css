@@ -3,19 +3,25 @@
     flex-direction: column;
     width: auto;
     height: auto;
-    margin-left: 50px;
+    padding: 10px 0 30px 30px;
+    background-color: #FAFAF7;
 }
 
 .square{
-    background-color: #1D1D1F;
-    color: #F5F5F7;
-    padding: 10px 5px;
-    height: 40px;
-    width: 140px;
-    margin: 20px;
+    padding: 22px 22px;
+    height: 150px;
+    width: 250px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 13px -3px rgba(56, 190, 224, 0.3);
+    border-radius: 17px;
+    font-size: 32px;
+    text-transform: capitalize;
+    font-family: 'Mabry Pro';
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    box-shadow: 0px 0px 13px -3px rgba(29, 29, 31, 1);
+    justify-content: start;
+    align-items: start;
 }

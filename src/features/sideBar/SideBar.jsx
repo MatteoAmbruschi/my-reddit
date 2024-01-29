@@ -10,10 +10,43 @@ function SideBar(){
         dispatch(filterClicked(item))
     }
 
+    const colors = [
+        {
+            backgroundColor: '#FFEB3B',
+            color: '#5C4A0B'
+        },
+        {
+            backgroundColor: '#C1FF3C',
+            color: '#155C0B'
+        },
+        {
+            backgroundColor: '#FF9D2B',
+            color: '#633419'
+        },
+        {
+            backgroundColor: '#FFDCBB',
+            color: '#63192A'
+        },
+        {
+            backgroundColor: '#6C68FD',
+            color: '#FFFFFF'
+        },
+        {
+            backgroundColor: '#FF8D4D',
+            color: '#FFF4FF'
+        },
+        {
+            backgroundColor: '#FFDCBB',
+            color: '#63192A'
+        },
+    ]
+
+    const randomPicker = Math.floor(Math.random() * 7)
+
     return (
             <div className={styles.containerSideBar}>
                 {items.map((item, index) => (
-                    <button className={styles.square} key={index} onClick={() => handleSearch(item.id)}>{item.title}</button>
+                    <button style={colors[index < 7 ? index : randomPicker]} className={styles.square} key={index} onClick={() => handleSearch(item.id)}>{item.title}</button>
                 ))}
             </div>
     )
