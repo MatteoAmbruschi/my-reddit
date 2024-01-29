@@ -1,10 +1,14 @@
 .menuBar{
     background: #1D1D1F;
     width: 100%;
-    height: 50px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .container{
@@ -24,12 +28,17 @@
 }
 
 .imgLogo {
-height: 53%;
-width: auto
+    height: 53%;
+    width: auto
 }
 
 .inputSearch{
-    height: 17px;
+    font-family:'Mabry Pro';
+    font-weight: 400;
+    font-size: 15px;
+    padding: 0 10px;
+    height: 28px;
+    border-radius: 7px;
     width: 70%;
     background-color: #F5F5F7;
     outline: none;

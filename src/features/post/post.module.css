@@ -19,8 +19,9 @@
 
     text-align: left;
     cursor: pointer;
-    box-shadow: 0px 0px 13px -3px rgba(56, 190, 224, 0.3);
+    box-shadow: 0px 0px 13px -3px rgba(56, 190, 224, 0.2);
     border-radius: 17px;
+    transition: all 0.3s ease;
 }
 
 .container h1{
@@ -32,4 +33,8 @@
 
 .singlePostContainer{
     display: flex;
+}
+
+.container:hover{
+    scale: 0.99;
 }

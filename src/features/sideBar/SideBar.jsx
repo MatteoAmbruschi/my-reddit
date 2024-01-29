@@ -44,11 +44,13 @@ function SideBar(){
     const randomPicker = Math.floor(Math.random() * 7)
 
     return (
+        <div>
             <div className={styles.containerSideBar}>
                 {items.map((item, index) => (
                     <button style={colors[index < 7 ? index : randomPicker]} className={styles.square} key={index} onClick={() => handleSearch(item.id)}>{item.title}</button>
                 ))}
             </div>
+        </div>
     )
 }
 

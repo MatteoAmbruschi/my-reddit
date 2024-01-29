@@ -137,6 +137,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #FAFAF7;
+
+  overflow: hidden;
 }
 
 code {
