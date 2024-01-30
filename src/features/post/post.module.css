@@ -23,30 +23,39 @@
 }
 
 .container h1{
-    font-size: 153px;
+    font-size: 100px;
+    line-height: 100px;
     text-transform: capitalize;
     margin: 0;
-    padding: 1% 4% 1% 4%;
+    padding: 3% 4% 4.5% 4%;
+
 }
 .container p{
-    padding: 0% 4% 6% 4%;
+    padding: 0% 4% 2% 4%;
+    font-size: 18px;
+    line-height: 18px;
+
+    text-align: justify;
 }
 
 .infoPosts{
     width: 100%;
-    height: 160px;
+    height: 130px;
     background-color: #ffeab3;
     color: #5C4A0B;
     border-radius: 0 0 17px 17px;
-    padding: 4% 4% 1% 4%;
+    padding: 4% 12% 1% 12%;
     box-sizing: border-box;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
 
     position: relative;
     top: -20px;
     z-index: -1;
     box-shadow: 0px 0px 13px 0px rgba(29, 29, 31, 0.1);
-
+    
 }
 
 .singlePostContainer{
@@ -80,7 +89,19 @@
 }
 
 .singlePost{
-    min-height: 300px;
     transform: none !important;
     cursor: auto;
+}
+
+.containerImg{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    max-height: 700px;
+    width: 100%;
+}
+.imgSinglePost{
+    height: 100%;
+    max-width: 100%;
+    padding: 0 4%;
 }

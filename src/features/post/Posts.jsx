@@ -18,12 +18,12 @@ function Posts() {
     
     useEffect(() => {
       dispatch(loadPosts())
-      /* console.log(allPosts) */
+      console.log(allPosts)
     }, [dispatch])
 
 
     //catch time
-    function handeleTile(unix){
+    function handleHour(unix){
       let unix_timestamp = unix;
       let date = new Date(unix_timestamp * 1000);
       let hours = date.getHours();
@@ -43,18 +43,17 @@ function Posts() {
               onClick={() => handleClickPost(post.id)}
             >
               <div>
-                <h1>{post.title}</h1>
+                <h1 style={post.title.length < 120 ? null : {fontSize: 68, lineHeight: '68px'}}>{post.title}</h1>
               </div>
-              <div>
-                <p>{post.selftext}</p>
-              </div>
+                {post.selftext ? <div> <p> {post.selftext} </p> </div> : null}
+                
             </div>
             <div className={styles.infoPosts} onClick={() => handleClickPost(post.id)}>
-              Comments: {post.num_comments} | 
-              Shared: {post.num_crossposts} | 
-              Score: {post.score} | 
-              Time: {handeleTile(post.created_utc)} hours ago
-             {/*  Image: <img src={post.url} alt={post.url} /> */}
+              <div>Comments: {post.num_comments} 💬 </div>
+              <div>Shared: {post.num_crossposts} 📢 </div>
+              <div>Score: {post.score} 🎯 </div>
+              <div>Type: {post.subreddit} 👀 </div>
+              <div>Time: {handleHour(post.created_utc)} hours ago 🕓 </div>
               </div>
           </div>
         ))}

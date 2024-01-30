@@ -138,7 +138,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #FAFAF7;
 
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 code {
