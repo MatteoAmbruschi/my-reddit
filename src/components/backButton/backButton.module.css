@@ -1,0 +1,17 @@
+.backButton{
+    border: none;
+    height: 100px;
+    width: 300px;
+    font-family: 'Mabry Pro';
+    font-size: 33px;
+    border-radius: 17px;
+    background-color: #5C4A0B;
+    color: #FFEB3B;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.backButton:hover{
+    transform: scale(0.95)
+}

@@ -1,20 +1,12 @@
 import SideBar from "../sideBar/SideBar";
 import styles from "./post.module.css";
 import { useSelector, useDispatch } from "react-redux";
-/* import { resetPostSingle } from "./postsSlice"; */
-import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import BackButton from "../../components/backButton/BackButton";
 
 function Post() {
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
-  /*   const dispatch = useDispatch() */
-  const navigate = useNavigate();
-
-  const handleBack = () => {
-    navigate(-1);
-    /*     dispatch(resetPostSingle()) */
-  };
-
+ 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [selectedPostId]);
@@ -34,13 +26,8 @@ function Post() {
       <SideBar />
 
       <div className={styles.postContainer}>
-        <button
-          onClick={() => handleBack()}
-          className={styles.backButton}
-        >
-          Turn Back ↩
-        </button>
-
+        
+        <BackButton />
 
           {selectedPostId ? (
             //INIZIO POST
