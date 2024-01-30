@@ -21,15 +21,14 @@
 
 .singleLink{
     display: flex;
-    justify-content: space-around;
     align-items: center;
     height: 100%;
-    width: 100%;
 }
 
 .imgLogo {
     height: 53%;
-    width: auto
+    width: auto;
+    cursor: pointer;
 }
 
 .inputSearch{
@@ -44,4 +43,32 @@
     outline: none;
     border: none;
     color: #1D1D1F;
+    margin-right: -24%;
 }
+
+.containerImg{
+  /*   border: 1px solid red; */
+    height: 100%;
+    width: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.containerImg img {
+    height: 76%;
+}
+  
+.rotateDown {
+    animation: rotateAnimation 2s ease infinite;
+  }
+  
+  @keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

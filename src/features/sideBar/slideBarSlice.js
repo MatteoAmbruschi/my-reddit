@@ -1,4 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+
+const loadPosts = createAsyncThunk('search', async(post, thunkAPI) => {
+    /*   const data = await fetchPosts(post)
+      const json = await data.json()
+      return json */
+    })
+    
 
 const slideBarSlice = createSlice({
     name: 'slideBar',
