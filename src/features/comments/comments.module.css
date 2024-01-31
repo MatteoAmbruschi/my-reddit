@@ -9,7 +9,7 @@
     --t: 30px; /* the size of the tail */
     
     max-width: 100%;
-    padding: calc(2*var(--r)/3);
+    padding: 0.4% 4%;
     -webkit-mask: 
       radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
         var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
@@ -26,4 +26,10 @@
     place-self: start;
 
     margin-top: 1%;
+}
+
+.timeContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

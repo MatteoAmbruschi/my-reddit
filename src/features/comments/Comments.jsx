@@ -22,7 +22,11 @@ function Comments() {
       {allComments.map((comment) => (
        comment.body ?  
         <div key={comment.id} className={styles.singleMessage}>
-            {comment.body}
+          <div>
+           <div className={styles.timeContainer}><h3>{comment.author}</h3><p>time</p></div> 
+          <p>{comment.body}</p>
+          </div>
+            
         </div>
       : undefined
       ))}
