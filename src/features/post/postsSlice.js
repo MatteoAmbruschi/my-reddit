@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const loadPosts = createAsyncThunk('allData/loadPosts', async() => {
-  const data = await fetch('https://www.reddit.com/r/popular.json')
+  const data = await fetch('https://www.reddit.com/r/italian.json')
   const json = await data.json()
   return json
 })
@@ -61,7 +61,11 @@ const postsSlice = createSlice({
         }).addCase(loadPosts.fulfilled, (state, action) => {
           state.isLoadingPosts = false;
           state.allPosts = action.payload;
-          state.allPosts = action.payload.data.children.map((child) => child.data);
+          try{
+            state.allPosts = action.payload.data.children.map((child) => child.data);
+          }catch(e){
+            console.log(e)
+          }
         })
       }
 })

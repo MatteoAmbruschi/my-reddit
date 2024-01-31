@@ -6,11 +6,16 @@ import { useEffect } from "react";
 function Comments() {
   const dispatch = useDispatch();
   const allComments = useSelector((state) => state.comments.commentsList);
+  const hasError = useSelector((state) => state.comments.hasError);
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
 
   useEffect(() => {
-    dispatch(loadComments({ subreddit: "popular", postId: selectedPostId.id }));
+    dispatch(loadComments({ subreddit: "popular", postId: selectedPostId ? selectedPostId.id : null }));
   }, [dispatch, selectedPostId]);
+
+  if(hasError){
+    return <div>Error loading comments!</div>;
+  }
 
   return (
     <div className={styles.comments}>

@@ -31,7 +31,7 @@ const commentsSlice = createSlice({
             try{
                 state.commentsList = action.payload[1].data.children.map((child) => child.data);
             } catch(e){
-                console.log(e)
+                state.commentsList = [{body: 'error!'}]
             }
         })
     }
