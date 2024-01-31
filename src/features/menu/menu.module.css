@@ -29,6 +29,10 @@
     height: 53%;
     width: auto;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+.imgLogo:hover{
+  transform: scale(0.95);
 }
 
 .inputSearch{
@@ -57,7 +61,12 @@
 }
 
 .containerImg img {
-    height: 76%;
+    height: 72%;
+    transition: all 0.3s ease;
+}
+
+.containerImg img:hover{
+  transform: scale(0.93);
 }
   
 .rotateDown {

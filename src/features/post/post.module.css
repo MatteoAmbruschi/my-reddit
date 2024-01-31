@@ -27,15 +27,14 @@
     line-height: 100px;
     text-transform: capitalize;
     margin: 0;
-    padding: 3% 4% 4.5% 4%;
+    padding: 3% 5% 5% 4%;
 
 }
 .container p{
-    padding: 0% 4% 2% 4%;
+    padding: 0% 5% 3% 4%;
+    margin-top: -1%;
     font-size: 18px;
-    line-height: 18px;
-
-    text-align: justify;
+    line-height: 20px;
 }
 
 .infoPosts{
@@ -73,6 +72,11 @@
 .singlePost{
     transform: none !important;
     cursor: auto;
+}
+
+.singlePost p{
+    font-size: 20px;
+    line-height: 25px;
 }
 
 .containerImg{

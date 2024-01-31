@@ -12,13 +12,22 @@ function Post() {
   }, [selectedPostId]);
 
   function handleHour(unix){
-    let unix_timestamp = unix;
-    let date = new Date(unix_timestamp * 1000);
-    let hours = date.getHours();
-    let minutes = "0" + date.getMinutes();
-    let seconds = "0" + date.getSeconds();
-    let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-    return formattedTime
+    let currentTimestamp = Math.floor(Date.now() / 1000);
+    let date = new Date(currentTimestamp - unix);
+
+    let hours =  Math.floor(date / 3600) > 0 ? Math.floor(date / 3600) : undefined;
+    let minutes = Math.floor((date % 3600) / 60);
+    if(hours > 1){
+      return `${hours + ':' + minutes} hours ago 🕓`
+    }
+    else if(hours === 1){
+      return `${hours + ':' + minutes} hour ago 🕓`
+    }
+    else if(hours === undefined && minutes > 1){
+      return `${minutes} minutes ago 🕓`
+    }else{
+      return `${minutes} minute ago 🕓`
+    }
   }
 
   return (
@@ -79,7 +88,7 @@ function Post() {
               <div>Shared: {selectedPostId.num_crossposts} 📢 </div>
               <div>Score: {selectedPostId.score} 🎯 </div>
               <div>Type: {selectedPostId.subreddit} 👀 </div>
-              <div>Time: {handleHour(selectedPostId.created_utc)} hours ago 🕓 </div>
+              <div>Time: {handleHour(selectedPostId.created_utc)}</div>
               </div>
             </>
             //FINE POST

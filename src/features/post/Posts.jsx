@@ -24,13 +24,22 @@ function Posts() {
 
     //catch time
     function handleHour(unix){
-      let unix_timestamp = unix;
-      let date = new Date(unix_timestamp * 1000);
-      let hours = date.getHours();
-      let minutes = "0" + date.getMinutes();
-      let seconds = "0" + date.getSeconds();
-      let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-      return formattedTime
+      let currentTimestamp = Math.floor(Date.now() / 1000);
+      let date = new Date(currentTimestamp - unix);
+
+      let hours =  Math.floor(date / 3600) > 0 ? Math.floor(date / 3600) : undefined;
+      let minutes = Math.floor((date % 3600) / 60);
+      if(hours > 1){
+        return `${hours + ':' + minutes} hours ago 🕓`
+      }
+      else if(hours === 1){
+        return `${hours + ':' + minutes} hour ago 🕓`
+      }
+      else if(hours === undefined && minutes > 1){
+        return `${minutes} minutes ago 🕓`
+      }else{
+        return `${minutes} minute ago 🕓`
+      }
     }
   
     return (
@@ -43,9 +52,9 @@ function Posts() {
               onClick={() => handleClickPost(post.id)}
             >
               <div>
-                <h1 style={post.title.length < 120 ? null : {fontSize: 68, lineHeight: '68px'}}>{post.title}</h1>
+                <h1 style={post.title.length < 120 ? null : {fontSize: 68, lineHeight: '68px'}}>{post.title.length < 160 ? post.title : post.title.slice(0, 160) + '...'}</h1>
               </div>
-                {post.selftext ? <div> <p> {post.selftext} </p> </div> : null}
+                {post.selftext ? <div> <p> {post.selftext.length < 1400 ? post.selftext : post.selftext.slice(0, 1400) + '...'} </p> </div> : null}
                 
             </div>
             <div className={styles.infoPosts} onClick={() => handleClickPost(post.id)}>
@@ -53,7 +62,7 @@ function Posts() {
               <div>Shared: {post.num_crossposts} 📢 </div>
               <div>Score: {post.score} 🎯 </div>
               <div>Type: {post.subreddit} 👀 </div>
-              <div>Time: {handleHour(post.created_utc)} hours ago 🕓 </div>
+              <div>Time: {handleHour(post.created_utc)}</div>
               </div>
           </div>
         ))}
