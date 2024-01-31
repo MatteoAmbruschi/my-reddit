@@ -18,7 +18,7 @@ function Posts() {
     
     useEffect(() => {
       dispatch(loadPosts())
-      console.log(allPosts)
+      /* console.log(allPosts) */
     }, [dispatch])
 
 

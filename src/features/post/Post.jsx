@@ -1,8 +1,9 @@
 import SideBar from "../sideBar/SideBar";
 import styles from "./post.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import BackButton from "../../components/backButton/BackButton";
+import Comments from "../comments/Comments";
 
 function Post() {
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
@@ -98,6 +99,8 @@ function Post() {
               <h1>Try Again :(</h1>
             </div>
           )}
+          
+          <Comments />
         </div>
       </div>
   );

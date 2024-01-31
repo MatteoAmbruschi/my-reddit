@@ -1,6 +1,6 @@
 import SideBar from './sideBar/SideBar'
 import Posts from './post/Posts'
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import { ReactLenis } from '@studio-freight/react-lenis'
 
 const HomePage = () => {
 

@@ -1,7 +1,7 @@
 import styles from './sideBar.module.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { filterClicked } from './slideBarSlice'
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import { ReactLenis } from '@studio-freight/react-lenis'
 
 function SideBar(){
     const dispatch = useDispatch()

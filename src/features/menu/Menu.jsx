@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./menu.module.css";
 import { Outlet } from "react-router";
 import { useDispatch, useSelector } from "react-redux";

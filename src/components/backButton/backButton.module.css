@@ -10,6 +10,10 @@
     cursor: pointer;
     margin-top: 20px;
     transition: all 0.3s ease;
+
+    position: sticky;
+    top: 63px;
+    z-index: 2;
 }
 
 .backButton:hover{
