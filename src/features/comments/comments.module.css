@@ -2,6 +2,7 @@
     font-size: 18px;
     font-weight: 500;
     max-width: 100%;
+    padding-bottom: 5%;
 }
 
 .singleMessage{
@@ -26,6 +27,11 @@
     place-self: start;
 
     margin-top: 1%;
+}
+
+.singleMessage p {
+  max-width: 1300px;
+  word-wrap: break-word;
 }
 
 .timeContainer{

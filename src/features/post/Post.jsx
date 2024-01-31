@@ -99,7 +99,7 @@ function Post() {
               <h1>Try Again :(</h1>
             </div>
           )}
-          
+
           <Comments />
         </div>
       </div>

@@ -41,10 +41,12 @@ function Posts() {
         return `${minutes} minute ago 🕓`
       }
     }
-  
+
+    const sortedposts = allPosts.slice().sort((a, b) => b.created_utc - a.created_utc);
+    
     return (
       <div className={styles.postContainer}>
-        {allPosts.map((post) => (
+        {sortedposts.map((post) => (
           <div className={styles.scale} key={post.id}>
             <div
               className={styles.container}
@@ -55,6 +57,28 @@ function Posts() {
                 <h1 style={post.title.length < 120 ? null : {fontSize: 68, lineHeight: '68px'}}>{post.title.length < 160 ? post.title : post.title.slice(0, 160) + '...'}</h1>
               </div>
                 {post.selftext ? <div> <p> {post.selftext.length < 1400 ? post.selftext : post.selftext.slice(0, 1400) + '...'} </p> </div> : null}
+
+
+                <div className={styles.containerImgPosts}>
+                {post.post_hint === "image" ? (
+                  <img
+                    src={post.url}
+                    alt={post.url}
+                    className={styles.imgSinglePosts}
+                  />
+                ) : post.post_hint === "hosted:video" ? (
+                  <video
+                    controls
+                    className={styles.imgSinglePosts}
+                  >
+                    <source
+                      src={post.media.reddit_video.fallback_url}
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : null}
+              </div>
                 
             </div>
             <div className={styles.infoPosts} onClick={() => handleClickPost(post.id)}>

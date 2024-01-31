@@ -86,8 +86,24 @@
     max-height: 700px;
     width: 100%;
 }
+
+.containerImgPosts{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    max-height: 100%;
+    width: 12%;
+}
+
 .imgSinglePost{
     height: 100%;
     max-width: 100%;
     padding: 0 4%;
+}
+
+.imgSinglePosts{
+    filter: blur(4px);
+    height: 10%;
+    max-width: 100%;
+    padding: 0 0 30% 40%;
 }

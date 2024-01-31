@@ -17,16 +17,33 @@ function Comments() {
     return <div>Error loading comments!</div>;
   }
 
+  function handleHour(unix){
+    let currentTimestamp = Math.floor(Date.now() / 1000);
+    let date = new Date(currentTimestamp - unix);
+
+    let hours =  Math.floor(date / 3600) > 0 ? Math.floor(date / 3600) : undefined;
+    let minutes = Math.floor((date % 3600) / 60);
+    if(hours > 1){
+      return `${hours + ':' + minutes} hours ago 🕓`
+    }
+    else if(hours === 1){
+      return `${hours + ':' + minutes} hour ago 🕓`
+    }
+    else if(hours === undefined && minutes > 1){
+      return `${minutes} minutes ago 🕓`
+    }else{
+      return `${minutes} minute ago 🕓`
+    }
+  }
+  const sortedComments = allComments.slice().sort((a, b) => b.created_utc - a.created_utc);
+
   return (
     <div className={styles.comments}>
-      {allComments.map((comment) => (
+      {sortedComments .map((comment) => (
        comment.body ?  
         <div key={comment.id} className={styles.singleMessage}>
-          <div>
-           <div className={styles.timeContainer}><h3>{comment.author}</h3><p>time</p></div> 
-          <p>{comment.body}</p>
-          </div>
-            
+           <div className={styles.timeContainer}><h3>{comment.author}</h3><p>{handleHour(comment.created_utc)}</p></div> 
+            <p>{comment.body}</p>
         </div>
       : undefined
       ))}
