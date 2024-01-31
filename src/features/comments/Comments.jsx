@@ -20,10 +20,11 @@ function Comments() {
   return (
     <div className={styles.comments}>
       {allComments.map((comment) => (
+       comment.body ?  
         <div key={comment.id} className={styles.singleMessage}>
-            {console.log(comment)}
-            {comment.body === undefined ? null : comment.body}
+            {comment.body}
         </div>
+      : undefined
       ))}
     </div>
   );

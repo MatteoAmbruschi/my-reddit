@@ -1,10 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const loadPosts = createAsyncThunk('allData/loadPosts', async() => {
-  const data = await fetch('https://www.reddit.com/r/italian.json')
-  const json = await data.json()
-  return json
-})
+export const loadPosts = createAsyncThunk('allData/loadPosts', async () => {
+  try {
+    const response = await fetch('https://www.reddit.com/r/popular.json');
+    if (!response.ok) {
+      throw new Error(`Failed to load posts. HTTP error: ${response.status}`);
+    }
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    throw error;
+  }
+});
 
 
 const postsSlice = createSlice({
@@ -54,8 +61,8 @@ const postsSlice = createSlice({
           state.isLoadingPosts = false;
           state.hasError = true;
           state.allPosts = [{
-            title: 'Error...',
-            text: 'Try Again :(',
+            title: "The page doesn't exist",
+            selftext: 'Try Again :(',
             id: 0
         }]
         }).addCase(loadPosts.fulfilled, (state, action) => {
