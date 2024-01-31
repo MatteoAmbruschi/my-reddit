@@ -19,10 +19,10 @@ function Post() {
     let hours =  Math.floor(date / 3600) > 0 ? Math.floor(date / 3600) : undefined;
     let minutes = Math.floor((date % 3600) / 60);
     if(hours > 1){
-      return `${hours + ':' + minutes} hours ago 🕓`
+      return `${hours + ':' +  (minutes < 10 ? `0${minutes}` : minutes)} hours ago 🕓`
     }
     else if(hours === 1){
-      return `${hours + ':' + minutes} hour ago 🕓`
+      return `${hours + ':' + (minutes < 10 ? `0${minutes}` : minutes)} hour ago 🕓`
     }
     else if(hours === undefined && minutes > 1){
       return `${minutes} minutes ago 🕓`

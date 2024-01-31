@@ -5,6 +5,8 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { cleanerComments } from "../../features/comments/commentsSlice";
+import { useDispatch } from "react-redux";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,9 +14,11 @@ gsap.registerPlugin(ScrollTrigger);
 function BackButton(){
     const navigate = useNavigate();
     const buttonRef = useRef();
+    const dispatch = useDispatch()
 
     const handleBack = () => {
         navigate(-1);
+        dispatch(cleanerComments())
       };
 
       useGSAP(() => {
@@ -36,7 +40,7 @@ function BackButton(){
     return (
         <button
             ref={buttonRef}
-            onClick={() => handleBack()}
+            onClick={handleBack}
             className={styles.backButton}
             >
             Turn Back ↩
