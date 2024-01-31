@@ -1,6 +1,7 @@
 .comments{
     font-size: 18px;
     font-weight: 500;
+    max-width: 100%;
 }
 
 .singleMessage{
