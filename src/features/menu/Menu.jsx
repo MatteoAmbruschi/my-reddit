@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { resetPostSingle } from "../post/postsSlice";
 import { loadPosts } from "../post/postsSlice";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { loadComments } from "../comments/commentsSlice";
 import { searchInput } from "../post/postsSlice";
+import SideBar from '../sideBar/SideBar'
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Menu = () => {
   const placeholder = `Search Posts in ${itemClick ? itemClick.title : "Popular"}`;
   const [isRotated, setIsRotated] = useState(false);
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
+  const refInput = useRef()
 
   const handleToHome = (e) => {
     e.preventDefault();
@@ -39,13 +41,19 @@ const Menu = () => {
     }, 2000);
   };
 
+  const [valueForm, setValueForm] = useState()
   const handleForm = ({target}) => {
+    setValueForm(target.value)
     dispatch(searchInput(target.value.split(" ").join("")))
   }
 
   useEffect(() => {
     dispatch(loadPosts());
   }, [keepInput])
+
+  useEffect(() =>{
+      setValueForm('')
+  }, [itemClick])
 
   return (
     <>
@@ -77,15 +85,18 @@ const Menu = () => {
             style={{ width: "50%" }}
           >
             <input
+              ref={refInput}
               className={styles.inputSearch}
               type="text"
               placeholder={placeholder}
               onChange={(e) => handleForm(e)}
+              value={valueForm}
             />
           </div>
         </nav>
       </div>
-      <Outlet />
+      <div style={{display: 'flex', width: '100%'}}><SideBar /><Outlet /></div>
+      
     </>
   );
 };

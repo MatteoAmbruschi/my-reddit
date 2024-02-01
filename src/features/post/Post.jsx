@@ -1,9 +1,9 @@
-import SideBar from "../sideBar/SideBar";
 import styles from "./post.module.css";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import BackButton from "../../components/backButton/BackButton";
 import Comments from "../comments/Comments";
+import { ReactLenis } from '@studio-freight/react-lenis'
 
 function Post() {
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
@@ -32,9 +32,7 @@ function Post() {
   }
 
   return (
-    <div className={styles.singlePostContainer}>
-      <SideBar />
-
+    <ReactLenis root>
       <div className={styles.postContainer}>
         
         <BackButton />
@@ -102,7 +100,7 @@ function Post() {
 
           <Comments />
         </div>
-      </div>
+      </ReactLenis>
   );
 }
 

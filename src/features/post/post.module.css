@@ -57,10 +57,6 @@
     
 }
 
-.singlePostContainer{
-    display: flex;
-}
-
 .scale{
     transition: all 0.3s ease;
 }
