@@ -48,6 +48,7 @@
     border: none;
     color: #1D1D1F;
     margin-right: -24%;
+    text-transform: capitalize;
 }
 
 .containerImg{

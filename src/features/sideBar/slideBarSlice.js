@@ -1,16 +1,10 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
-const loadPosts = createAsyncThunk('search', async(post, thunkAPI) => {
-    /*   const data = await fetchPosts(post)
-      const json = await data.json()
-      return json */
-    })
-    
 
 const slideBarSlice = createSlice({
     name: 'slideBar',
     initialState: {
-        items: [{title: 'Calcio', id: 0}, {title: 'Macchine', id: 1}, {title: 'Londra', id: 2} , {title: 'Atalanta', id: 3}, {title: 'Fumetti', id: 4}, {title: 'Telefoni', id: 5}],
+        items: [{title: 'popular', id: 0}, {title: 'funny', id: 1}, {title: 'AskReddit', id: 2} , {title: 'gaming', id: 3}, {title: 'aww', id: 4}, {title: 'movies', id: 5}],
         itemClicked: null
     },
     reducers: {

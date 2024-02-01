@@ -4,7 +4,6 @@ import { Outlet } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 
 import { resetPostSingle } from "../post/postsSlice";
-import { cleaner } from "../sideBar/slideBarSlice";
 import { loadPosts } from "../post/postsSlice";
 import { useEffect, useState } from "react";
 import { loadComments } from "../comments/commentsSlice";
@@ -16,21 +15,20 @@ const Menu = () => {
   const itemClick = useSelector((state) => state.slideBar.itemClicked);
   const keepInput = useSelector((state) => state.posts.keepInput)
 
-  const placeholder = `Search Posts in ${itemClick ? itemClick.title : "Home"}`;
+  const placeholder = `Search Posts in ${itemClick ? itemClick.title : "Popular"}`;
   const [isRotated, setIsRotated] = useState(false);
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
 
   const handleToHome = (e) => {
     e.preventDefault();
     dispatch(resetPostSingle());
-    dispatch(cleaner());
     navigate("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handlerCharging = (e) => {
     e.preventDefault();
-    dispatch(loadPosts(keepInput ? keepInput : 'popular'));
+    dispatch(loadPosts());
     setIsRotated(true);
 
     dispatch(loadComments({ subreddit: keepInput, postId: selectedPostId ? selectedPostId.id : null }));
@@ -46,7 +44,7 @@ const Menu = () => {
   }
 
   useEffect(() => {
-    dispatch(loadPosts(keepInput ? keepInput : 'popular'));
+    dispatch(loadPosts());
   }, [keepInput])
 
   return (
