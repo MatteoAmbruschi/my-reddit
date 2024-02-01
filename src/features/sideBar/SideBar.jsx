@@ -2,7 +2,7 @@ import styles from "./sideBar.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { filterClicked } from "./slideBarSlice";
 
-import { loadPosts, searchInput } from "../post/postsSlice";
+import { searchInput } from "../post/postsSlice";
 import { useEffect } from "react";
 
 function SideBar() {
@@ -17,7 +17,6 @@ function SideBar() {
   useEffect(() => {
     if (itemClicked) {
       dispatch(searchInput(itemClicked.title));
-      dispatch(loadPosts());
     }
   }, [itemClicked]);
 

@@ -5,10 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { resetPostSingle } from "../post/postsSlice";
 import { loadPosts } from "../post/postsSlice";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { loadComments } from "../comments/commentsSlice";
 import { searchInput } from "../post/postsSlice";
 import SideBar from '../sideBar/SideBar'
+import { cleanerItem } from "../sideBar/slideBarSlice";
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -16,11 +17,17 @@ const Menu = () => {
   const itemClick = useSelector((state) => state.slideBar.itemClicked);
   const keepInput = useSelector((state) => state.posts.keepInput)
 
-  const placeholder = `Search Posts in ${itemClick ? itemClick.title : "Popular"}`;
   const [isRotated, setIsRotated] = useState(false);
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
-  const refInput = useRef()
+  const [valueForm, setValueForm] = useState('')
+  const [placeholder, setPlaceholder] = useState("Popular")
 
+  useEffect(() => {
+    if(itemClick){
+    dispatch(cleanerItem())
+    setPlaceholder(itemClick.title ? itemClick.title : "Popular")}
+  }, [itemClick])
+  
   const handleToHome = (e) => {
     e.preventDefault();
     dispatch(resetPostSingle());
@@ -41,10 +48,13 @@ const Menu = () => {
     }, 2000);
   };
 
-  const [valueForm, setValueForm] = useState()
+
   const handleForm = ({target}) => {
     setValueForm(target.value)
     dispatch(searchInput(target.value.split(" ").join("")))
+    if (valueForm === '') {
+      setPlaceholder("Popular");
+    }
   }
 
   useEffect(() => {
@@ -85,10 +95,9 @@ const Menu = () => {
             style={{ width: "50%" }}
           >
             <input
-              ref={refInput}
               className={styles.inputSearch}
               type="text"
-              placeholder={placeholder}
+              placeholder={`Search Posts In ${placeholder}`}
               onChange={(e) => handleForm(e)}
               value={valueForm}
             />

@@ -12,11 +12,11 @@ const slideBarSlice = createSlice({
             const clickedId = action.payload
             state.itemClicked = state.items.find(click => click.id === clickedId) || null
         },
-        cleaner: (state) => {
+        cleanerItem: (state) => {
             state.itemClicked = null
         }
     }
 })
 
-export const { filterClicked, cleaner } = slideBarSlice.actions
+export const { filterClicked, cleanerItem } = slideBarSlice.actions
 export default slideBarSlice

@@ -5,9 +5,7 @@ const HomePage = () => {
 
   return (
     <ReactLenis root>
-      <div style={{ display: 'flex', width: '100%' }}>  
         <Posts />
-      </div>
     </ReactLenis>
   );
 };

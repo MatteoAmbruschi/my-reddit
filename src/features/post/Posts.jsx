@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { postSingle } from './postsSlice';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import { loadPosts } from './postsSlice';
 
 function Posts() {
     const dispatch = useDispatch();
@@ -16,11 +14,6 @@ function Posts() {
       navigate('/post');
     }
     
-    useEffect(() => {
-      dispatch(loadPosts())
-      /* console.log(allPosts) */
-    }, [dispatch])
-
 
     //catch time
     function handleHour(unix){

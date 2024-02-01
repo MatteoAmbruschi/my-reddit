@@ -13,7 +13,7 @@ function Comments() {
 
   useEffect(() => {
     dispatch(loadComments({ subreddit: keepInput, postId: selectedPostId ? selectedPostId.id : null }));
-  }, [dispatch, selectedPostId]);
+  }, [selectedPostId]);
 
   if(hasError){
     return <div>Error loading comments!</div>;
