@@ -41,7 +41,7 @@ function Comments() {
 
   return (
     <div className={styles.comments}>
-      {sortedComments .map((comment) => (
+      {sortedComments.map((comment) => (
        comment.body ?  
         <div key={comment.id} className={styles.singleMessage}>
            <div className={styles.timeContainer}><h3>{comment.author}</h3><p>{handleHour(comment.created_utc)}</p></div> 
