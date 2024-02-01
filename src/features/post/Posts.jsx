@@ -54,7 +54,7 @@ function Posts() {
               onClick={() => handleClickPost(post.id)}
             >
               <div>
-                <h1 style={post.title.length < 120 ? null : {fontSize: 68, lineHeight: '68px'}}>{post.title.length < 160 ? post.title : post.title.slice(0, 160) + '...'}</h1>
+                <h1 style={post.title.length < 100 ? null : {fontSize: 64, lineHeight: '64px'}}>{post.title.length < 160 ? post.title : post.title.slice(0, 160) + '...'}</h1>
               </div>
                 {post.selftext ? <div> <p> {post.selftext.length < 1400 ? post.selftext : post.selftext.slice(0, 1400) + '...'} </p> </div> : null}
 

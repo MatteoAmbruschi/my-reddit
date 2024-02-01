@@ -8,9 +8,11 @@ function Comments() {
   const allComments = useSelector((state) => state.comments.commentsList);
   const hasError = useSelector((state) => state.comments.hasError);
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
+  const keepInput = useSelector((state) => state.posts.keepInput)
+
 
   useEffect(() => {
-    dispatch(loadComments({ subreddit: "popular", postId: selectedPostId ? selectedPostId.id : null }));
+    dispatch(loadComments({ subreddit: keepInput, postId: selectedPostId ? selectedPostId.id : null }));
   }, [dispatch, selectedPostId]);
 
   if(hasError){

@@ -1,45 +1,33 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const loadPosts = createAsyncThunk('allData/loadPosts', async () => {
-  try {
-    const response = await fetch('https://www.reddit.com/r/popular.json');
-    if (!response.ok) {
-      throw new Error(`Failed to load posts. HTTP error: ${response.status}`);
+export const loadPosts = createAsyncThunk('allData/loadPosts', async (_, { getState }) => {
+    const state = getState();
+    const page = state.posts.keepInput ? state.posts.keepInput : 'popular';
+
+    try {
+      const response = await fetch(`https://www.reddit.com/r/${page}.json`);
+      if (!response.ok) {
+        throw new Error(`Failed to load posts. HTTP error: ${response.status}`);
+      }
+      const json = await response.json();
+      return json;
+    } catch (error) {
+      throw error;
     }
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    throw error;
   }
-});
+);
 
 
 const postsSlice = createSlice({
     name: 'posts',
     initialState: {
-        allPosts: [
-        {
-            title: 'charging...',
-            text: "It's working!",
-            id: 0
-        },
-        {
-            title: 'charging....',
-            text: 'Or not?!',
-            id: 1
-        },
-        {
-            title: 'charging.....',
-            text: 'Wait a moment...',
-            id: 2
-        },
-        {
-            title: 'charging......',
-            text: 'Nahh, refresh the page :(',
-            id: 3
-        }
-      ],
+        allPosts: [{
+          title: "Charging...",
+          selftext: 'Looking for it!',
+          id: 0
+      }],
       selectedPost: null,
+      keepInput: 'popular',
 
       isLoadingPosts: false,
       hasError: false
@@ -52,6 +40,9 @@ const postsSlice = createSlice({
           resetPostSingle: (state) => {
             state.selectedPost = null;
           },
+          searchInput: (state, action) =>{
+            state.keepInput = action.payload
+          }
       },
       extraReducers: (builder) => {
         builder.addCase(loadPosts.pending, (state) => {
@@ -77,5 +68,5 @@ const postsSlice = createSlice({
       }
 })
 
-export const { postSingle, resetPostSingle } = postsSlice.actions;
+export const { postSingle, resetPostSingle, searchInput } = postsSlice.actions;
 export default postsSlice;

@@ -23,8 +23,8 @@
 }
 
 .container h1{
-    font-size: 100px;
-    line-height: 100px;
+    font-size: 80px;
+    line-height: 80px;
     text-transform: capitalize;
     margin: 0;
     padding: 3% 5% 5% 4%;
@@ -92,7 +92,7 @@
     justify-content: start;
     align-items: start;
     max-height: 100%;
-    width: 12%;
+    width: 11%;
 }
 
 .imgSinglePost{

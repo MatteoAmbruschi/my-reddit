@@ -7,16 +7,16 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cleanerComments } from "../../features/comments/commentsSlice";
 import { useDispatch } from "react-redux";
-
-
 gsap.registerPlugin(ScrollTrigger);
+
 
 function BackButton(){
     const navigate = useNavigate();
     const buttonRef = useRef();
     const dispatch = useDispatch()
 
-    const handleBack = () => {
+    const handleBack = (e) => { 
+        e.preventDefault();
         navigate(-1);
         dispatch(cleanerComments())
       };
