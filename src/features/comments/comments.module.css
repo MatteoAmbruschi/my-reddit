@@ -30,7 +30,7 @@
 }
 
 .singleMessage p {
-  max-width: 1300px;
+  max-width: 93%;
   word-wrap: break-word;
 }
 
@@ -38,4 +38,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+@media (min-width: 768px) and (max-width: 1410px) {
+  .comments{
+    font-size: 17px;
+    padding-bottom: 4%;
+  }
+  .singleMessage p {
+  margin-top: 0;
+  }
 }

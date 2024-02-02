@@ -103,3 +103,69 @@
     max-width: 100%;
     padding: 0 0 30% 40%;
 }
+
+@media (min-width: 768px) and (max-width: 1410px) {
+    .postContainer{
+        padding: 0 1%;
+    }
+    
+    .container{
+        margin-top: 20px;
+        border-radius: 14px;
+
+    }
+    
+    .container h1{
+        font-size: 60px;
+        line-height: 60px;
+        padding: 3% 5% 5% 4%;
+    
+    }
+    .container p{
+        padding: 0% 3% 1.5% 41;
+        margin-top: -1%;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
+    .infoPosts{
+        height: 105px;
+        border-radius: 0 0 14px 14px;
+        padding: 4% 8% 1% 8%;
+        top: -16px; 
+    }
+    
+    .singlePost p{
+        font-size: 18px;
+        line-height: 23px;
+    }
+    
+    .containerImg{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        max-height: 500px;
+        width: 100%;
+    }
+    
+    .containerImgPosts{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        max-height: 100%;
+        width: 9%;
+    }
+    
+    .imgSinglePost{
+        height: 100%;
+        max-width: 100%;
+        padding: 0 3%;
+    }
+    
+    .imgSinglePosts{
+        filter: blur(4px);
+        height: 9%;
+        max-width: 100%;
+        padding: 0 0 20% 40%;
+    }
+}

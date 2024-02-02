@@ -53,7 +53,14 @@ function SideBar() {
   const randomPicker = Math.floor(Math.random() * 7);
 
   return (
-      <div className={styles.pageContainer}>
+    <div className={styles.header__content}>
+      <input type="checkbox" className={styles.inputNone} /> 
+        <span></span>
+        <span></span>
+        <span></span>
+
+    <div className={styles.menu}>
+
         <div className={styles.containerSideBar}>
           {items.map((item, index) => (
             <button
@@ -66,8 +73,9 @@ function SideBar() {
             </button>
           ))}
         </div>
-      </div>
 
+    </div> 
+  </div> 
   );
 }
 

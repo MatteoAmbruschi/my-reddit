@@ -10,6 +10,7 @@ export const loadPosts = createAsyncThunk('allData/loadPosts', async (_, { getSt
         throw new Error(`Failed to load posts. HTTP error: ${response.status}`);
       }
       const json = await response.json();
+      console.log(json)
       return json;
     } catch (error) {
       throw error;
