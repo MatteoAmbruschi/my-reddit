@@ -47,5 +47,18 @@
   }
   .singleMessage p {
   margin-top: 0;
+  word-wrap: break-word;
+  }
+}
+
+@media (max-width: 767px) {
+  .comments{
+    font-size: 16px;
+    padding-bottom: 4%;
+    max-width: 100%;
+  }
+  .singleMessage p {
+  margin-top: 0;
+  word-wrap: break-word;
   }
 }

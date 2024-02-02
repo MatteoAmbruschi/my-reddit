@@ -33,7 +33,7 @@ function Post() {
 
   return (
     <ReactLenis root>
-      <div className={styles.postContainer}>
+      <div className={`${styles.postContainer} ${styles.singleContainer}`}>
         
         <BackButton />
 

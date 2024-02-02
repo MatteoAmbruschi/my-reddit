@@ -30,3 +30,17 @@
         top: 63px;
     }
 }
+
+@media (max-width: 767px) {
+    .backButton {
+        height: 60px;
+        width: 220px;
+        font-size: 27px;
+        border-radius: 15px;
+        margin-top: 20px;
+        top: 36px;
+        position: fixed;
+        right: 20px;
+        left: auto; 
+    }
+}
