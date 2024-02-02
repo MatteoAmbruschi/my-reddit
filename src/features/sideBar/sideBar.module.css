@@ -63,7 +63,7 @@ span {
         flex-direction: column;
         width: auto;
         height: 30px;
-        padding: 10px 0 30px 30px;
+        padding: 0px 0 30px 30px;
         background-color: #FAFAF7;
 
         /*     position: sticky;
@@ -79,8 +79,8 @@ span {
     .header__content {
         display: block;
         position: fixed;
-        top: 75px;
-        left: 30px;
+        top: 65px;
+        left: 20px;
         z-index: 5;
         -webkit-user-select: none;
         user-select: none;
@@ -156,7 +156,7 @@ span {
     .menu {
         position: absolute;
         width: 160px;
-        margin: -100px 0 0 -46px;
+        margin: -110px 0 0 -40px;
         padding-top: 105px;
         padding-right: 17px;
         background-color: #FAFAF7;
