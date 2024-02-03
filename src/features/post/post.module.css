@@ -9,7 +9,7 @@
 
 .container{
     background-color: #ffe600;
-    color: #534204;
+    color: #503f03;
     margin-top: 30px;
     width: 100%;
     display: flex;
@@ -41,8 +41,8 @@
 .infoPosts{
     width: 100%;
     height: 130px;
-    background-color: #ffe6a7;
-    color: #534204;
+    background-color: #fde6ac;
+    color: #503f03;
     border-radius: 0 0 17px 17px;
     padding: 4% 12% 1% 12%;
     box-sizing: border-box;
