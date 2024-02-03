@@ -22,8 +22,8 @@ function SideBar() {
 
   const colors = [
     {
-      backgroundColor: "#FFEB3B",
-      color: "#5C4A0B",
+      backgroundColor: "#ffe600",
+      color: "#534204",
     },
     {
       backgroundColor: "#C1FF3C",
