@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import BackButton from "../../components/backButton/BackButton";
 import Comments from "../comments/Comments";
-import { ReactLenis } from '@studio-freight/react-lenis'
+/* import { ReactLenis } from '@studio-freight/react-lenis' */
 
 function Post() {
   const selectedPostId = useSelector((state) => state.posts.selectedPost);
@@ -32,7 +32,7 @@ function Post() {
   }
 
   return (
-    <ReactLenis root>
+/*     <ReactLenis root> */
       <div className={`${styles.postContainer} ${styles.singleContainer}`}>
         
         <BackButton />
@@ -100,7 +100,7 @@ function Post() {
 
           <Comments />
         </div>
-      </ReactLenis>
+/*       </ReactLenis> */
   );
 }
 

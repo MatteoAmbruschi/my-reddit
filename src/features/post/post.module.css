@@ -1,10 +1,14 @@
 
 .postContainer{
-    display: flex;
+    flex: 1;
     flex-direction: column;
     width: 100%;
     padding: 0 1.5%;
     box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+
+    overscroll-behavior: contain;
 }
 
 .container{
@@ -36,6 +40,7 @@
     margin-top: -1%;
     font-size: 18px;
     line-height: 20px;
+    word-wrap: break-word;
 }
 
 .infoPosts{
@@ -132,7 +137,6 @@
     .singlePost p{
         font-size: 18px;
         line-height: 23px;
-        word-wrap: break-word;
     }
     
     .containerImg{
@@ -173,7 +177,6 @@
     .container p{
         font-size: 14px;
         line-height: 15px;
-        word-wrap: break-word;
     }
     
     .infoPosts{

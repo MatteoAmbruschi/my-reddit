@@ -38,7 +38,7 @@ function Posts() {
     const sortedposts = allPosts.slice().sort((a, b) => b.created_utc - a.created_utc);
     
     return (
-      <div className={styles.postContainer}>
+      <div className={styles.postContainer} style={{ overflow: 'auto'}}>
         {sortedposts.map((post) => (
           <div className={styles.scale} key={post.id}>
             <div

@@ -1,12 +1,12 @@
 import Posts from './post/Posts'
-import { ReactLenis } from '@studio-freight/react-lenis'
+/* import { ReactLenis } from '@studio-freight/react-lenis' */
 
 const HomePage = () => {
 
   return (
-    <ReactLenis root>
+/*     <ReactLenis root> */
         <Posts />
-    </ReactLenis>
+/*     </ReactLenis> */
   );
 };
 export default HomePage

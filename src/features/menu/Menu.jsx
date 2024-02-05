@@ -104,7 +104,7 @@ const Menu = () => {
           </div>
         </nav>
       </div>
-      <div style={{display: 'flex', width: '100%'}}><SideBar /><Outlet /></div>
+      <div style={{display: 'flex', width: '100%', flex: '1'}}><SideBar /><Outlet /></div>
       
     </>
   );
